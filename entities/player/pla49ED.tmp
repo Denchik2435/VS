@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://dx4k3d7kc1rb4"]
+
+[ext_resource type="Script" path="res://entities/player/player.gd" id="1_bbgll"]
+[ext_resource type="Texture2D" uid="uid://boyat2i5rgbfp" path="res://entities/player/Idle.png" id="2_ti2p3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_be7c1"]
+radius = 23.0
+height = 152.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbum0"]
+atlas = ExtResource("2_ti2p3")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnrn3"]
+atlas = ExtResource("2_ti2p3")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rbmh"]
+atlas = ExtResource("2_ti2p3")
+region = Rect2(0, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4yxg"]
+atlas = ExtResource("2_ti2p3")
+region = Rect2(128, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtqe0"]
+atlas = ExtResource("2_ti2p3")
+region = Rect2(0, 128, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uriso"]
+atlas = ExtResource("2_ti2p3")
+region = Rect2(128, 128, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfpmm"]
+atlas = ExtResource("2_ti2p3")
+region = Rect2(0, 192, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpy4t"]
+atlas = ExtResource("2_ti2p3")
+region = Rect2(128, 192, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yqy5e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbum0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnrn3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rbmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4yxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtqe0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uriso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfpmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpy4t")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_bbgll")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 27)
+shape = SubResource("CapsuleShape2D_be7c1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(2.98438, 2.98438)
+sprite_frames = SubResource("SpriteFrames_yqy5e")
+animation = &"idle"
+frame = 2
+frame_progress = 0.775749

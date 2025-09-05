@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://cb3rtd2lke55m"]
+
+[ext_resource type="Script" path="res://scenes/game_over_screen.gd" id="1_1jujv"]
+
+[sub_resource type="Theme" id="Theme_y4u7l"]
+default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_6p4ay"]
+default_font_size = 40
+
+[sub_resource type="Theme" id="Theme_ctwpq"]
+default_font_size = 40
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1jujv")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 136.0
+offset_right = 694.0
+offset_bottom = 205.0
+theme = SubResource("Theme_y4u7l")
+text = "Game over"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 437.0
+offset_top = 225.0
+offset_right = 555.0
+offset_bottom = 280.0
+theme = SubResource("Theme_6p4ay")
+text = "Score:"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 437.0
+offset_top = 359.0
+offset_right = 703.0
+offset_bottom = 446.0
+theme = SubResource("Theme_ctwpq")
+text = "Play again"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
