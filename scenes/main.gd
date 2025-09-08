@@ -1,6 +1,6 @@
 extends Node2D
 
-
+var ticks = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -12,11 +12,20 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
+	ticks+=1
 	var c = preload("res://entities/coin/coin.tscn")
 	var new_coin = c.instantiate()
 	new_coin.position.x = randf_range(0, get_viewport().size.x)
 	new_coin.position.y = randf_range(0, get_viewport().size.y)
 	add_child(new_coin)
+	
+	randf()
+	if randf()<0.3:
+		var p =preload("res://entities/potion/potion.tscn")
+		var new_potion = p.instantiate()
+		new_potion.position.x = randf_range(0, get_viewport().size.x)
+		new_potion.position.y = randf_range(0, get_viewport().size.y)
+		add_child(new_potion)
 	
 	var e = preload("res://entities/enemy/skeleton/skeleton.tscn")
 	var new_enemy = e.instantiate()

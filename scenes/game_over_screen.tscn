@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cb3rtd2lke55m"]
+[gd_scene load_steps=8 format=3 uid="uid://cb3rtd2lke55m"]
 
-[ext_resource type="Script" path="res://scenes/game_over_screen.gd" id="1_1jujv"]
+[ext_resource type="Script" uid="uid://dc85v6oyh3uut" path="res://scenes/game_over_screen.gd" id="1_1jujv"]
+[ext_resource type="Script" uid="uid://dooyodn4kniip" path="res://scenes/button_2.gd" id="2_w7l8t"]
 
 [sub_resource type="Theme" id="Theme_y4u7l"]
 default_font_size = 50
@@ -10,6 +11,11 @@ default_font_size = 40
 
 [sub_resource type="Theme" id="Theme_ctwpq"]
 default_font_size = 40
+
+[sub_resource type="Theme" id="Theme_3g7b7"]
+default_font_size = 35
+
+[sub_resource type="Theme" id="Theme_1q0x7"]
 
 [node name="GameOverScreen" type="Control"]
 layout_mode = 3
@@ -23,28 +29,65 @@ script = ExtResource("1_1jujv")
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 431.0
-offset_top = 136.0
+offset_top = 36.0
 offset_right = 694.0
-offset_bottom = 205.0
+offset_bottom = 105.0
 theme = SubResource("Theme_y4u7l")
 text = "Game over"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 437.0
-offset_top = 225.0
-offset_right = 555.0
-offset_bottom = 280.0
+offset_left = 817.0
+offset_top = 47.0
+offset_right = 935.0
+offset_bottom = 102.0
 theme = SubResource("Theme_6p4ay")
 text = "Score:"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 437.0
-offset_top = 359.0
-offset_right = 703.0
-offset_bottom = 446.0
+offset_left = 450.0
+offset_top = 505.0
+offset_right = 716.0
+offset_bottom = 592.0
 theme = SubResource("Theme_ctwpq")
 text = "Play again"
 
+[node name="magnit" type="Button" parent="." groups=["player"]]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 198.0
+offset_right = 390.0
+offset_bottom = 229.0
+text = "Buy"
+script = ExtResource("2_w7l8t")
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 129.0
+offset_right = 306.0
+offset_bottom = 187.0
+theme = SubResource("Theme_3g7b7")
+text = "Shop:"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 201.0
+offset_right = 259.0
+offset_bottom = 229.0
+theme = SubResource("Theme_1q0x7")
+text = "Magnit: 10 coins"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 201.0
+offset_right = 498.0
+offset_bottom = 227.0
+text = "Lvl: 0"
+
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="magnit" to="." method="_on_magnit_button_down"]

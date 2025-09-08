@@ -16,8 +16,8 @@ func _process(delta: float) -> void:
 		var dx = player.position.x-self.position.x
 		var dy = player.position.y-self.position.y
 		var D = sqrt(dx*dx+dy*dy)
-		
 		var coef = v0/D
+		
 		if D>0:							#????????
 			coef = v0/D
 		if D<350:

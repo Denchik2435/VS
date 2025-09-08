@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://b2fyysdrhn5ls"]
 
-[ext_resource type="Script" path="res://entities/enemy/skeleton/skeleton.gd" id="1_jtqok"]
+[ext_resource type="Script" uid="uid://c5j4ngpbt1uv2" path="res://entities/enemy/skeleton/skeleton.gd" id="1_jtqok"]
 [ext_resource type="Texture2D" uid="uid://uy3jlijrcpw1" path="res://entities/enemy/skeleton/Idle.png" id="2_x3mph"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_55juv"]

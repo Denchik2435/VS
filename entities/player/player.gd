@@ -1,9 +1,17 @@
 extends Area2D
 
+var magnitcoins = []
+var magnithp = []
 var hp = 100
 var coins = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	$Magnitarea/CollisionShape2D2.apply_scale(Vector2(Globals.magnetpover,Globals.magnetpover))
+	if Globals.magnetpover == 0:
+		$Magnitarea/CollisionShape2D2.disabled = true
+	else:
+		$Magnitarea/CollisionShape2D2.disabled = false
 	pass # Replace with function body.
 
 
@@ -17,8 +25,29 @@ func _process(delta: float) -> void:
 	var stepY = DY/10
 	self.position.x += stepX
 	self.position.y += stepY
+	
+	for i in range(len(magnitcoins)-1,-1,-1):
+		var a = magnitcoins[i]
+		if a != null:
+			var dx = self.position.x-a.position.x
+			var dy = self.position.y-a.position.y
+			a.position.x+=dx/20
+			a.position.y+=dy/20
+		else:
+			magnitcoins.remove_at(i) 
+	
+	
+	for i in range(len(magnithp)-1,-1,-1):
+		var a = magnithp[i]
+		if a != null:
+			var dx = self.position.x-a.position.x
+			var dy = self.position.y-a.position.y
+			a.position.x+=dx/20
+			a.position.y+=dy/20
+		else: 
+			magnithp.remove_at(i)
 	pass
-
+	
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Coins"):
@@ -30,6 +59,10 @@ func _on_area_entered(area: Area2D) -> void:
 		$Label.text = "HP: "+str(self.hp)
 		self.modulate=Color(1,0,0,1)
 		$Timer.start()
+	if area.is_in_group("Potion") and hp<100:
+		area.queue_free()
+		self.hp+=10
+		$Label.text = "HP: "+str(self.hp)
 
 	if hp<=0:
 		Globals.total_coins+=self.coins
@@ -40,4 +73,14 @@ func _on_area_entered(area: Area2D) -> void:
 func _on_timer_timeout() -> void:
 	self.modulate=Color(1,1,1,1)
 
+	pass # Replace with function body.
+
+
+func _on_magnitarea_area_entered(area: Area2D) -> void:
+	#print(area.name)
+	if area.is_in_group("Coins"):
+		print(area)
+		magnitcoins.append(area)
+	if area.is_in_group("Potion"):
+		magnithp.append(area)
 	pass # Replace with function body.
