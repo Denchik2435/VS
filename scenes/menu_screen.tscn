@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckw5wac6bommx"]
+
+[ext_resource type="Script" uid="uid://cxtbph0etx5lb" path="res://scenes/menu_screen.gd" id="1_yft84"]
+
+[node name="Menu_screen" type="Node2D"]
+script = ExtResource("1_yft84")
+
+[node name="exit" type="Button" parent="."]
+offset_left = 515.0
+offset_top = 362.0
+offset_right = 638.0
+offset_bottom = 395.0
+text = "Exit"
+
+[node name="shop" type="Button" parent="."]
+offset_left = 489.0
+offset_top = 294.0
+offset_right = 663.0
+offset_bottom = 335.0
+text = "Shop"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 465.0
+offset_top = 165.0
+offset_right = 702.0
+offset_bottom = 215.0
+text = "Game over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="exit" to="." method="_on_exit_button_down"]
+[connection signal="button_down" from="shop" to="." method="_on_shop_button_down"]

@@ -66,7 +66,7 @@ func _on_area_entered(area: Area2D) -> void:
 
 	if hp<=0:
 		Globals.total_coins+=self.coins
-		get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
+		get_tree().change_scene_to_file("res://scenes/menu_screen.tscn")
 	pass # Replace with function body.
 
 
