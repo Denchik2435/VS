@@ -52,7 +52,7 @@ func _process(delta: float) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Coins"):
 		area.queue_free()
-		self.coins+=1
+		self.coins+=1+Globals.lvlmultiplicater
 		$Label2.text = "Coins: "+str(coins)
 	if area.is_in_group("Enemies"):
 		self.hp-=10

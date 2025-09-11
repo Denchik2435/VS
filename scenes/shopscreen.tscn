@@ -75,7 +75,7 @@ horizontal_alignment = 1
 layout_mode = 0
 offset_left = 393.0
 offset_top = 201.0
-offset_right = 498.0
+offset_right = 448.0
 offset_bottom = 227.0
 text = "Lvl: 0"
 
@@ -85,7 +85,8 @@ offset_left = 80.0
 offset_top = 240.0
 offset_right = 273.0
 offset_bottom = 275.0
-text = "Expensive coins: 20 coins"
+text = "Expensive coins: 20 coins
+Multiplicater"
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
@@ -99,9 +100,26 @@ text = "Buy"
 layout_mode = 0
 offset_left = 396.0
 offset_top = 241.0
-offset_right = 489.0
-offset_bottom = 278.0
+offset_right = 452.0
+offset_bottom = 271.0
 text = "Lvl: 0"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 201.0
+offset_right = 498.0
+offset_bottom = 224.0
+text = "Max: 5"
+
+[node name="Label8" type="Label" parent="."]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 240.0
+offset_right = 498.0
+offset_bottom = 263.0
+text = "Max: 3"
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="magnit" to="." method="_on_magnit_button_down"]
+[connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]
