@@ -19,13 +19,6 @@ func _on_timer_timeout() -> void:
 	new_coin.position.y = randf_range(0, get_viewport().size.y)
 	add_child(new_coin)
 	
-	randf()
-	if randf()<0.3:
-		var p =preload("res://entities/potion/potion.tscn")
-		var new_potion = p.instantiate()
-		new_potion.position.x = randf_range(0, get_viewport().size.x)
-		new_potion.position.y = randf_range(0, get_viewport().size.y)
-		add_child(new_potion)
 	
 	var e = preload("res://entities/enemy/skeleton/skeleton.tscn")
 	var new_enemy = e.instantiate()
@@ -40,4 +33,15 @@ func _on_timer_timeout() -> void:
 	new_enemy.position.y=cy+r*sin(phi)
 	add_child(new_enemy)
 
+	pass # Replace with function body.
+
+
+func _on_timer_2_timeout() -> void:
+	randf()
+	if randf()<0.5:
+		var p =preload("res://entities/potion/potion.tscn")
+		var new_potion = p.instantiate()
+		new_potion.position.x = randf_range(0, get_viewport().size.x)
+		new_potion.position.y = randf_range(0, get_viewport().size.y)
+		add_child(new_potion)
 	pass # Replace with function body.

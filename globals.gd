@@ -2,7 +2,8 @@ extends Node
 
 var total_coins=0
 var magnetpover = 0
-var lvl = 0
+var lvlmagnit = 0
+var lvlmultiplicater = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

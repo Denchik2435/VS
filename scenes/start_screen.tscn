@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://c48b3emv81ijx"]
+
+[ext_resource type="Script" uid="uid://bleau0owhi5ct" path="res://scenes/start_screen.gd" id="1_tx5wa"]
+
+[node name="start_screen" type="Node2D"]
+script = ExtResource("1_tx5wa")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 518.0
+offset_top = 323.0
+offset_right = 654.0
+offset_bottom = 357.0
+text = "Play"
+
+[node name="Options" type="Button" parent="."]
+offset_left = 515.0
+offset_top = 371.0
+offset_right = 651.0
+offset_bottom = 405.0
+text = "Options
+"
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 516.0
+offset_top = 419.0
+offset_right = 652.0
+offset_bottom = 453.0
+text = "Exit
+"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 448.0
+offset_top = 188.0
+offset_right = 726.0
+offset_bottom = 237.0
+text = "WELCOME!
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="Play" to="." method="_on_play_button_down"]
+[connection signal="button_down" from="Exit" to="." method="_on_exit_button_down"]
