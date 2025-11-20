@@ -92,7 +92,7 @@ func _on_area_entered(area: Area2D) -> void:
 		#self.position.x += stepX
 		#self.position.y += stepY
 		Globals.total_coins+=self.coins
-		get_tree().change_scene_to_file("res://scenes/menu_screen.tscn")
+		get_tree().change_scene_to_file("res://scenes/Game over/menu_screen.tscn")
 	pass # Replace with function body.
 
 
@@ -106,6 +106,6 @@ func _on_magnitarea_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Coins"):
 		print(area)
 		magnitcoins.append(area)
-	if area.is_in_group("Potion"):
-		magnithp.append(area)
+	#if area.is_in_group("Potion"):
+	#	magnithp.append(area)
 	pass # Replace with function body.

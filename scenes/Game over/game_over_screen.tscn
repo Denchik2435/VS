@@ -1,9 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cb3rtd2lke55m"]
+[gd_scene load_steps=5 format=3 uid="uid://d3rsm7kx10xo0"]
 
-[ext_resource type="Script" uid="uid://dc85v6oyh3uut" path="res://scenes/shopscreen.gd" id="1_1jujv"]
-
-
-
+[ext_resource type="Script" uid="uid://dc85v6oyh3uut" path="res://scenes/Game over/game_over_screen.gd" id="1_kktfo"]
 
 [sub_resource type="Theme" id="Theme_y4u7l"]
 default_font_size = 50
@@ -21,7 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_1jujv")
+script = ExtResource("1_kktfo")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0

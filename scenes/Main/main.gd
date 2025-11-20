@@ -5,6 +5,7 @@ var ticks = 0
 func _ready() -> void:
 	pass # Replace with function body.
 
+			
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -44,4 +45,20 @@ func _on_timer_2_timeout() -> void:
 		new_potion.position.x = randf_range(0, get_viewport().size.x)
 		new_potion.position.y = randf_range(0, get_viewport().size.y)
 		add_child(new_potion)
+	pass # Replace with function body.
+
+
+func _on_continue_pressed() -> void:
+	$Panel.visible=false
+	get_tree().paused=$Panel.visible
+
+	pass # Replace with function body.
+
+
+func _on_options_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_exit_pressed() -> void:
+	get_tree().quit()
 	pass # Replace with function body.

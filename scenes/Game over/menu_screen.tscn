@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://ckw5wac6bommx"]
 
-[ext_resource type="Script" uid="uid://cxtbph0etx5lb" path="res://scenes/menu_screen.gd" id="1_yft84"]
+[ext_resource type="Script" uid="uid://cxtbph0etx5lb" path="res://scenes/Game over/menu_screen.gd" id="1_spxwa"]
 
 [node name="Menu_screen" type="Node2D"]
-script = ExtResource("1_yft84")
+script = ExtResource("1_spxwa")
 
 [node name="exit" type="Button" parent="."]
 offset_left = 515.0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cb3rtd2lke55m"]
 
-[ext_resource type="Script" uid="uid://dc85v6oyh3uut" path="res://scenes/shopscreen.gd" id="1_gc8mk"]
-[ext_resource type="Script" uid="uid://dooyodn4kniip" path="res://scenes/button_2.gd" id="2_3q46q"]
+[ext_resource type="Script" uid="uid://dc85v6oyh3uut" path="res://scenes/Shop/shopscreen.gd" id="1_sv3ih"]
+[ext_resource type="Script" uid="uid://dooyodn4kniip" path="res://scenes/button_2.gd" id="2_nlk5b"]
 
 [sub_resource type="Theme" id="Theme_y4u7l"]
 default_font_size = 50
@@ -21,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_gc8mk")
+script = ExtResource("1_sv3ih")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -59,7 +59,7 @@ offset_top = 198.0
 offset_right = 390.0
 offset_bottom = 229.0
 text = "Buy"
-script = ExtResource("2_3q46q")
+script = ExtResource("2_nlk5b")
 
 [node name="Label4" type="Label" parent="."]
 layout_mode = 0
