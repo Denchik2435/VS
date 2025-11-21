@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3sy2kyuf53px"]
+
+[ext_resource type="PackedScene" uid="uid://dx4k3d7kc1rb4" path="res://entities/player/player.tscn" id="2_0spu5"]
+[ext_resource type="PackedScene" uid="uid://cxgj13f3egkuk" path="res://scenes/Main/panel.tscn" id="2_bbrak"]
+
+[node name="Level_2" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_0spu5")]
+position = Vector2(166, 453)
+
+[node name="Panel" parent="." instance=ExtResource("2_bbrak")]
+offset_left = 513.0
+offset_top = 165.0
+offset_right = 674.0
+offset_bottom = 441.0

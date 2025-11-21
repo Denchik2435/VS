@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfsxc7aysh0i"]
+
+[ext_resource type="Script" uid="uid://bgsvepbmxeb33" path="res://scenes/Main/level_1.gd" id="1_bmcih"]
+[ext_resource type="PackedScene" uid="uid://dx4k3d7kc1rb4" path="res://entities/player/player.tscn" id="2_in67q"]
+[ext_resource type="PackedScene" uid="uid://cxgj13f3egkuk" path="res://scenes/Main/panel.tscn" id="3_bmcih"]
+[ext_resource type="PackedScene" uid="uid://bh22fi6bhsnnb" path="res://scenes/Main/exit.tscn" id="4_in67q"]
+[ext_resource type="Script" uid="uid://cyyiufwmj110m" path="res://scenes/Main/exit.gd" id="5_vmx1k"]
+
+[node name="Level_1" type="Node2D"]
+script = ExtResource("1_bmcih")
+
+[node name="Player" parent="." instance=ExtResource("2_in67q")]
+position = Vector2(292, 278)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="Panel" parent="." instance=ExtResource("3_bmcih")]
+
+[node name="exit" parent="." instance=ExtResource("4_in67q")]
+visible = false
+position = Vector2(1151, 315)
+script = ExtResource("5_vmx1k")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer3" to="exit" method="_on_timer_3_timeout"]
+[connection signal="area_entered" from="exit" to="Player" method="_on_exit_area_entered"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cb3rtd2lke55m"]
 
 [ext_resource type="Script" uid="uid://dc85v6oyh3uut" path="res://scenes/Shop/shopscreen.gd" id="1_sv3ih"]
-[ext_resource type="Script" uid="uid://dooyodn4kniip" path="res://scenes/Shop/button_2.gd" id="2_nlk5b"]
+[ext_resource type="Script" uid="uid://dooyodn4kniip" path="res://scenes/button_2.gd" id="2_nlk5b"]
 
 [sub_resource type="Theme" id="Theme_y4u7l"]
 default_font_size = 50

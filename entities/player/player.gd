@@ -14,7 +14,8 @@ var dy = prevx-self.position.y
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	$Label2.text = "Coins: "+str(coins)
+	$Label.text = "HP: "+str(self.hp)
 	$Magnitarea/CollisionShape2D2.apply_scale(Vector2(Globals.magnetpover,Globals.magnetpover))
 	if Globals.magnetpover == 0:
 		$Magnitarea/CollisionShape2D2.disabled = true
@@ -108,4 +109,9 @@ func _on_magnitarea_area_entered(area: Area2D) -> void:
 		magnitcoins.append(area)
 	#if area.is_in_group("Potion"):
 	#	magnithp.append(area)
+	pass # Replace with function body.
+
+
+func _on_exit_area_entered(area: Area2D) -> void:
+	get_tree().change_scene_to_file("res://scenes/Main/level_2.tscn")
 	pass # Replace with function body.
