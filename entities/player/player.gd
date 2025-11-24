@@ -2,8 +2,6 @@ extends Area2D
 
 var magnitcoins = []
 var magnithp = []
-var hp = 100
-var coins = 0
 
 var prevx = 0
 var prevy = 0 
@@ -14,8 +12,8 @@ var dy = prevx-self.position.y
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Label2.text = "Coins: "+str(coins)
-	$Label.text = "HP: "+str(self.hp)
+	$Label2.text = "Coins: "+str(Globals.coins_forlvl)
+	show_hp()
 	$Magnitarea/CollisionShape2D2.apply_scale(Vector2(Globals.magnetpover,Globals.magnetpover))
 	if Globals.magnetpover == 0:
 		$Magnitarea/CollisionShape2D2.disabled = true
@@ -26,6 +24,8 @@ func _ready() -> void:
 	prevy = self.position.y
 	pass # Replace with function body.
 
+func show_hp():
+	$Label.text = "HP: "+str(Globals.hp_forlvl)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -77,22 +77,22 @@ func _process(delta: float) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Coins"):
 		area.queue_free()
-		self.coins+=1+Globals.lvlmultiplicater
-		$Label2.text = "Coins: "+str(coins)
+		Globals.coins_forlvl+=1+Globals.lvlmultiplicater
+		$Label2.text = "Coins: "+str(Globals.coins_forlvl)
 	if area.is_in_group("Enemies"):
-		self.hp-=10
-		$Label.text = "HP: "+str(self.hp)
+		Globals.hp_forlvl-=10
+		show_hp()
 		self.modulate=Color(1,0,0,1)
 		$Timer.start()
-	if area.is_in_group("Potion") and hp<100:
+	if area.is_in_group("Potion") and Globals.hp_forlvl<100:
 		area.queue_free()
-		self.hp+=10
-		$Label.text = "HP: "+str(self.hp)
+		Globals.hp_forlvl+=10
+		show_hp()
 
-	if hp<=0:
+	if Globals.hp_forlvl<=0:
 		#self.position.x += stepX
 		#self.position.y += stepY
-		Globals.total_coins+=self.coins
+		Globals.total_coins+=Globals.coins_forlvl
 		get_tree().change_scene_to_file("res://scenes/Game over/menu_screen.tscn")
 	pass # Replace with function body.
 
@@ -109,9 +109,4 @@ func _on_magnitarea_area_entered(area: Area2D) -> void:
 		magnitcoins.append(area)
 	#if area.is_in_group("Potion"):
 	#	magnithp.append(area)
-	pass # Replace with function body.
-
-
-func _on_exit_area_entered(area: Area2D) -> void:
-	get_tree().change_scene_to_file("res://scenes/Main/level_2.tscn")
 	pass # Replace with function body.

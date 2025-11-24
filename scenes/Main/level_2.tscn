@@ -1,15 +1,51 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3sy2kyuf53px"]
+[gd_scene load_steps=6 format=3 uid="uid://b3sy2kyuf53px"]
 
+[ext_resource type="Script" uid="uid://buffd3pg2ko4a" path="res://scenes/Main/level_2.gd" id="1_bbrak"]
 [ext_resource type="PackedScene" uid="uid://dx4k3d7kc1rb4" path="res://entities/player/player.tscn" id="2_0spu5"]
 [ext_resource type="PackedScene" uid="uid://cxgj13f3egkuk" path="res://scenes/Main/panel.tscn" id="2_bbrak"]
+[ext_resource type="PackedScene" uid="uid://bh22fi6bhsnnb" path="res://scenes/Main/exit.tscn" id="4_22o8x"]
+[ext_resource type="PackedScene" uid="uid://b0g4bwtd0da5q" path="res://scenes/Main/fale_doors.tscn" id="5_v5a3k"]
 
 [node name="Level_2" type="Node2D"]
+script = ExtResource("1_bbrak")
 
 [node name="Player" parent="." instance=ExtResource("2_0spu5")]
-position = Vector2(166, 453)
+position = Vector2(119, 510)
+scale = Vector2(1.00616, 1)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
 
 [node name="Panel" parent="." instance=ExtResource("2_bbrak")]
-offset_left = 513.0
-offset_top = 165.0
-offset_right = 674.0
-offset_bottom = 441.0
+visible = false
+offset_left = 807.0
+offset_top = 214.0
+offset_right = 1156.0
+offset_bottom = 812.0
+
+[node name="exit" parent="." instance=ExtResource("4_22o8x")]
+position = Vector2(1918, 502)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 925.0
+offset_top = 2.0
+offset_right = 1049.0
+offset_bottom = 64.0
+text = "! !!!!!!!!!!!!!!!!!!!!!!!"
+
+[node name="Fale_doors" parent="." instance=ExtResource("5_v5a3k")]
+position = Vector2(-5, 527)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer3" to="exit" method="_on_timer_3_timeout"]
+[connection signal="area_entered" from="exit" to="." method="_on_exit_area_entered"]

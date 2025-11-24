@@ -6,33 +6,33 @@
 script = ExtResource("1_tsf4u")
 
 [node name="Play" type="Button" parent="."]
-offset_left = 518.0
-offset_top = 323.0
-offset_right = 654.0
-offset_bottom = 357.0
+offset_left = 847.0
+offset_top = 523.0
+offset_right = 1083.0
+offset_bottom = 582.0
 text = "Play"
 
 [node name="Options" type="Button" parent="."]
-offset_left = 515.0
-offset_top = 371.0
-offset_right = 651.0
-offset_bottom = 405.0
+offset_left = 846.0
+offset_top = 587.0
+offset_right = 1082.0
+offset_bottom = 646.0
 text = "Options
 "
 
 [node name="Exit" type="Button" parent="."]
-offset_left = 516.0
-offset_top = 419.0
-offset_right = 652.0
-offset_bottom = 453.0
+offset_left = 844.0
+offset_top = 652.0
+offset_right = 1084.0
+offset_bottom = 712.0
 text = "Exit
 "
 
 [node name="Label" type="Label" parent="."]
-offset_left = 448.0
-offset_top = 188.0
-offset_right = 726.0
-offset_bottom = 237.0
+offset_left = 831.0
+offset_top = 429.0
+offset_right = 1109.0
+offset_bottom = 478.0
 text = "WELCOME!
 "
 horizontal_alignment = 1

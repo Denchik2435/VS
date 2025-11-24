@@ -3,14 +3,13 @@ extends Node2D
 var ticks = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Globals.hp_forlvl=100
-	$Player.show_hp()
 	pass # Replace with function body.
-
+	
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$Label.text = "Time to escape: "+str($Timer3.time_left)
 	pass
-	
+
 
 func _on_timer_timeout() -> void:
 	ticks+=1
@@ -56,5 +55,5 @@ func _on_continue_pressed() -> void:
 
 func _on_exit_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):
-		get_tree().change_scene_to_file("res://scenes/Main/level_2.tscn")
+		get_tree().change_scene_to_file("res://scenes/Main/level_3.tscn")
 	pass # Replace with function body.

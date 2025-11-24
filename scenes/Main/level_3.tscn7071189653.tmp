@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxeunhpjump4s"]
+
+[ext_resource type="Script" uid="uid://t0qx2yo2bxmh" path="res://scenes/Main/level_3.gd" id="1_iim6b"]
+[ext_resource type="PackedScene" uid="uid://dx4k3d7kc1rb4" path="res://entities/player/player.tscn" id="2_xu18s"]
+[ext_resource type="PackedScene" uid="uid://cxgj13f3egkuk" path="res://scenes/Main/panel.tscn" id="3_us3bh"]
+
+[node name="level_3" type="Node2D"]
+script = ExtResource("1_iim6b")
+
+[node name="Player" parent="." instance=ExtResource("2_xu18s")]
+position = Vector2(934, 517)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="Panel" parent="." instance=ExtResource("3_us3bh")]
+visible = false
+offset_left = 767.0
+offset_top = 205.0
+offset_right = 1116.0
+offset_bottom = 803.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
