@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bf8rw0n6mkr2f" path="res://entities/player/char_blue_1.png" id="2_g1fbt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_be7c1"]
-radius = 19.0
-height = 94.0
+radius = 28.0
+height = 102.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hgmd0"]
 atlas = ExtResource("2_g1fbt")
@@ -125,26 +125,27 @@ radius = 122.066
 script = ExtResource("1_bbgll")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 14)
 shape = SubResource("CapsuleShape2D_be7c1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(5, -22)
+position = Vector2(3, -21)
 scale = Vector2(2.98438, 2.98438)
 sprite_frames = SubResource("SpriteFrames_yqy5e")
 animation = &"idle"
 
 [node name="Label" type="Label" parent="."]
-offset_left = -20.0
-offset_top = -76.0
-offset_right = 19.0
-offset_bottom = -52.0
+offset_left = -17.0
+offset_top = -61.0
+offset_right = 22.0
+offset_bottom = -37.0
 text = "HP:"
 
 [node name="Label2" type="Label" parent="."]
-offset_left = -20.0
-offset_top = 44.0
-offset_right = 20.0
-offset_bottom = 67.0
+offset_left = -27.0
+offset_top = 63.0
+offset_right = 29.0
+offset_bottom = 86.0
 text = "Coins:"
 
 [node name="Timer" type="Timer" parent="."]

@@ -4,7 +4,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syf2l"]
 
-[node name="Fale_doors" type="Area2D"]
+[node name="Fake_doors" type="Area2D"]
 modulate = Color(1, 0.133333, 0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
