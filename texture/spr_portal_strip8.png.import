@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://74banm87ei7"
-path="res://.godot/imported/Dungeon_24x24.png-cfc1cb1d96a1baaaa004cd1097e50b0b.ctex"
+uid="uid://dtmmi33tjsjgx"
+path="res://.godot/imported/spr_portal_strip8.png-29557aefb3bc62a37c0888e536541033.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/enemy/effects/Dungeon_24x24.png"
-dest_files=["res://.godot/imported/Dungeon_24x24.png-cfc1cb1d96a1baaaa004cd1097e50b0b.ctex"]
+source_file="res://texture/spr_portal_strip8.png"
+dest_files=["res://.godot/imported/spr_portal_strip8.png-29557aefb3bc62a37c0888e536541033.ctex"]
 
 [params]
 

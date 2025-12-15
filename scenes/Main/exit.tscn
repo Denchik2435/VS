@@ -1,10 +1,74 @@
-[gd_scene load_steps=4 format=3 uid="uid://bh22fi6bhsnnb"]
+[gd_scene load_steps=13 format=3 uid="uid://bh22fi6bhsnnb"]
 
-[ext_resource type="Texture2D" uid="uid://dww77611d1u4t" path="res://icon.svg" id="1_diero"]
 [ext_resource type="Script" uid="uid://cyyiufwmj110m" path="res://scenes/Main/exit.gd" id="1_yaiqx"]
+[ext_resource type="Texture2D" uid="uid://dtmmi33tjsjgx" path="res://texture/spr_portal_strip8.png" id="2_yaiqx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yaiqx"]
 size = Vector2(47, 171)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7w40l"]
+atlas = ExtResource("2_yaiqx")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqcaq"]
+atlas = ExtResource("2_yaiqx")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixcgl"]
+atlas = ExtResource("2_yaiqx")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdufh"]
+atlas = ExtResource("2_yaiqx")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibm7x"]
+atlas = ExtResource("2_yaiqx")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0dxv"]
+atlas = ExtResource("2_yaiqx")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma8sm"]
+atlas = ExtResource("2_yaiqx")
+region = Rect2(1536, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5skod"]
+atlas = ExtResource("2_yaiqx")
+region = Rect2(1792, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ywef6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7w40l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqcaq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixcgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdufh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibm7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0dxv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ma8sm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5skod")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="exit" type="Area2D"]
 script = ExtResource("1_yaiqx")
@@ -13,8 +77,6 @@ script = ExtResource("1_yaiqx")
 position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_yaiqx")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1, 0)
-scale = Vector2(0.359375, 1.32813)
-texture = ExtResource("1_diero")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ywef6")
+frame_progress = 0.867164

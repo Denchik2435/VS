@@ -1,5 +1,6 @@
 extends Area2D
 func _ready() -> void:
+	$AnimatedSprite2D.play("default")
 	#visible=false
 	set_open(false)
 	
@@ -13,5 +14,4 @@ func set_open(b):
 		self.modulate=Color(0, 1, 0, 1)
 		$CollisionShape2D.disabled=false
 	else:
-		self.modulate=Color(1, 0, 0, 1)
 		$CollisionShape2D.disabled=true

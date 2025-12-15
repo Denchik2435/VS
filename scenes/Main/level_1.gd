@@ -16,6 +16,7 @@ func _on_timer_timeout() -> void:
 	ticks+=1
 	var c = preload("res://entities/coin/coin.tscn")
 	var new_coin = c.instantiate()
+	print(get_viewport())
 	new_coin.position.x = randf_range(0, get_viewport().size.x)
 	new_coin.position.y = randf_range(0, get_viewport().size.y)
 	add_child(new_coin)

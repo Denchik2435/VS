@@ -1,6 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b0g4bwtd0da5q"]
 
-[ext_resource type="Texture2D" uid="uid://dww77611d1u4t" path="res://icon.svg" id="1_syf2l"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0cepo"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syf2l"]
 
@@ -10,7 +11,7 @@ modulate = Color(1, 0.133333, 0, 1)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, 4.29153e-06)
 scale = Vector2(0.359375, 1.32813)
-texture = ExtResource("1_syf2l")
+texture = SubResource("CompressedTexture2D_0cepo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_syf2l")
